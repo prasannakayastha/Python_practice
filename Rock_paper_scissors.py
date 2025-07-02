@@ -44,7 +44,7 @@ first_name(first_player)#Function call
 sec_player= input("Please enter the second player name: ")#Requesting the name of the second player.
 second_name(sec_player)#Function call
 
-main()# The main function call
+main()# The main function is called
 
 
 
