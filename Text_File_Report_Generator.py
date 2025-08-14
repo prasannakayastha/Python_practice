@@ -15,7 +15,8 @@ def avg_revenue_growth():
     for item in total_revenue:
         total+=item
     avg_revenue=float(total/len(total_revenue))  
-    print(f"Avg Revenue is ${avg_revenue:.2f}")
+    return(avg_revenue)
+    
     
 def growth_revenue():
    
@@ -47,14 +48,16 @@ def six_monthly_revenue():
 six_monthly_revenue()           
        
 growth_revenue()    
+
+
+
     
-avg_revenue_growth()          
+avg=avg_revenue_growth()    
+print(f"Average revenue is ${avg:.2f}")
+   
+    
 
 
     
 '''   for item , revenue  in enumerate(total_revenue):
         print(f"Month {item} - ${revenue}")'''
-    
-    
-
-    

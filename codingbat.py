@@ -1,7 +1,10 @@
 def str(name):
-    for x in range(0,len(name)):
-        if name[:2] == name[:x]:
-            print("yes")
+ x=len(name)
+ if x%2==0:
+  z=x//2
+  return name[:z]
+  
+ 
 
 
-str("hixxhi")
+print(str("hixxhi"))
