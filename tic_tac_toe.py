@@ -83,8 +83,8 @@ def main():
             check_win()
             second_player_move()
             check_win()
-               
-            
+            print(check_win)               
+                
     except KeyboardInterrupt:
         print("Game Exit")    
 
