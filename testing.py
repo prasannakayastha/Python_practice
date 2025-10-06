@@ -27,13 +27,11 @@ print("Total bill for the groceries items is :", total)'''
         
       
       
-x={'item_name': 'ap', 'item_price': 3.0, 'item_quantity': 4}, {'item_name': 'ba', 'item_price': 4.0, 'item_quantity': 5}  
-x['item_name']="orange"
-print(x)
+x=[{'item_name': 'ap', 'item_price': 3.0, 'item_quantity': 4}, {'item_name': 'ba', 'item_price': 4.0, 'item_quantity': 5}] 
 
-
-for y in enumerate(x):
-    print(y)  
+for k in x:
+    for y , z in k.items():
+        print(y,z)
       
         
         
