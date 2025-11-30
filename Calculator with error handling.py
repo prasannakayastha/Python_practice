@@ -25,7 +25,7 @@ def main():
             user_operation=input("Please enter the operation + , - , x , /")
             second_num=int(input("Please enter the second number: "))
         
-        except (ValueError, TypeError, NameError, ZeroDivisionError) as e:
+        except (ValueError, TypeError, NameError) as e:
             print(f"The error has occured {e}, Please enter the right input!")
             continue
         if user_operation=="+":
@@ -41,7 +41,8 @@ def main():
             division = div(first_num, second_num)
             print(f"Result = {division:.2f}") 
         elif user_operation=="/" and second_num==0:
-            print("Cannot be zero!")    
+            print("Cannot be zero!")
+            continue   
         else:
             print("Invalid operation", "please start again.")
             continue    
