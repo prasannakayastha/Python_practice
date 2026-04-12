@@ -1,0 +1,37 @@
+'''Project Overview
+Create a simple system to manage books in a small library where users can track which books are available and which are borrowed.
+Core Features
+1. Book Management
+
+Store information about each book (title, author, publication year)
+Track whether a book is currently borrowed or available
+Display book details when requested
+
+2. Borrowing System
+
+Allow users to borrow a book (mark it as borrowed)
+Prevent borrowing a book that's already borrowed
+Show appropriate messages for successful or failed borrow attempts
+
+3. Return System
+
+Allow users to return a borrowed book
+Mark the book as available again
+Handle cases where someone tries to return a book that wasn't borrowed
+
+4. Library Information
+
+Store the library name (shared across all books)
+Display which library a book belongs to
+
+5. Book Status Display
+
+Show current status of any book (Available or Borrowed)
+Display complete book information including title, author, and availability
+
+Concepts to Demonstrate
+
+Classes: Use a Book class to represent individual books
+Scope: Show class-level data (library name) vs instance-level data (individual book details)
+Namespaces: Demonstrate how class variables, instance variables, and methods each have their own namespace
+'''
