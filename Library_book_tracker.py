@@ -7,31 +7,35 @@
 
 
 
-
+#Class namespace called Book has been created
 
 class Book():
     '''Attributes and Methods are describe below'''
     def __init__(self, title, author):
         self.title=title # Attributes
         self.author=author# Attributes
-        self.borrowed=False
+        self.borrowed=False # Attributes sets at False
         
-    def borrow(self):
-        if self.borrowed == True:
+    def rented(self): #Method
+        if self.borrowed==True:
             print("Already borrowed")
         else:
-            print("Book is available")
-                   
-    def returned(self):
-        if self.borrowed==False:
-            print("Please return the book")
-            
-    def show_info(self):
-        
-        if self.borrowed == True:
-            print(self.title, self.author,"Borrowed") 
+            self.borrowed=True
+            print("Not available")
+                    
+    def returned(self): # Method
+        if self.borrowed==True:
+            self.borrowed=False
+            print("Book returned")
         else:
-            print(self.title, self.author,"Available")    
+            
+            print("Wasn't borrowed")       
+            
+    def show_info(self):# Method
+        if self.borrowed == True:
+            print(self.title, self.author,": Borrowed") 
+        else:
+            print(self.title, self.author,": Available")    
  
      
 book1 = Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling")
@@ -46,7 +50,10 @@ book9 = Book("Animal Farm", "George Orwell")
 book10 =Book("Brave New World", "Aldous Huxley")
     
     
-    
-book1.show_info() 
+book1.rented()
 
-book2.show_info()       
+book1.show_info()    
+    
+book1.returned()   
+
+book1.show_info()

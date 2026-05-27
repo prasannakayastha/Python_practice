@@ -25,19 +25,21 @@ def groceries_list(): # Function to create list of dictionaries of item name, pr
 
 #Printing the total price of the groceries without discount
 def cal(final_list):
-    Total_bill=0 # Assign the variable 
+    Sub_total_bill=0 # Assign the variable 
     for items in final_list:
         Total=items["Item_price"] * items["Item_quantity"]# assigning the value of keys to the variable
-        Total_bill=Total_bill + Total # sum of the individual price
-    return Total_bill 
+        Sub_total_bill=Sub_total_bill + Total # sum of the individual price
+    return Sub_total_bill 
 
-def main():  
+def main(): 
+    
     item_list=[]
     number_of_items=int(input("Please enter the number of items = "))
 
    # Number of items ,  in future it can be user input.
     for _ in range(number_of_items): # loop to run to add items into the list
         item=groceries_list()# assign function call to a variable.
+        #print(item)
         item_list.append(item) # instead of calling function , just add the return value to the list.
      
     #print(item_list)# print the final list of the dictionaries.
@@ -47,15 +49,24 @@ def main():
             print(f"{k} = {v}")
     #If the total bill exceed $10 , then 10% discount will apply.
     
-    Total_bill_1=cal(item_list)
-    print(f"\nTotal bill for the groceries items is :${Total_bill_1:.2f}") # print the total bill  
+    Sub_total_bill_1=cal(item_list)
+    print(f"\nTotal bill for the groceries items is :${Sub_total_bill_1:.2f}") # print the total bill 
+    f=open('C:\\Users\\Owner\\Desktop\\test.txt', 'w')
+    f.write(f"\nTotal bill for the groceries items is :${Sub_total_bill_1:.2f}")
+    f.close()
 
-    if Total_bill_1>=10:
-        discounted_amount=Total_bill_1 * 0.1 # 10% discount applied.
-        final_bill=Total_bill_1-discounted_amount
-        print(f"\nDiscount of (10%) applied = ${final_bill}")  
+    if Sub_total_bill_1>=10:
+        discounted_amount=Sub_total_bill_1 * 0.1 # 10% discount applied.
+        total_bill=Sub_total_bill_1-discounted_amount
+        print(f"\nDiscount of (10%) applied = ${discounted_amount:.2f}") 
+        print(f"\n Total after discount = {total_bill:.2f}")
+        tax_bill=0.15*total_bill
+        final_bill= total_bill+tax_bill
+        
+        print(f"\n 15% GST = {tax_bill:.2f}") 
+        print(f"\n The final bill = {final_bill:.2f}")
     else:
         print("Sorry no discount")         
- 
+    
 main()
 

@@ -1,0 +1,12 @@
+Looking at your code, here are the key issues I notice:
+Critical Problem:
+Your car method should be __init__ - this is Python's constructor method. Right now, your class won't initialize properly when you create a new Car object. Without __init__, you'd need to manually call the car method after creating an instance, which isn't standard practice.
+Logic Issues:
+
+Your hired method checks the status but doesn't actually change it - it only prints whether the car is available or not. You probably want this method to set self.hire = True.
+Your returned method has confusing logic. When self.hire is True, it says "Car is hired" (which seems like just a status check), and when False it says "Car is returned". This method should probably set self.hire = False to mark the car as returned.
+The show_detail method doesn't display the year and model that you're storing - it only shows the hire status.
+
+Design Consideration:
+The naming is a bit inconsistent - you have a boolean called hire but methods called hired and returned. It might be clearer to have methods like hire_car() and return_car() that actually change the state, plus maybe a check_availability() method that just displays status.
+The overall structure is on the right track, but the methods need to actually modify the hire attribute rather than just checking and printing its current value.
