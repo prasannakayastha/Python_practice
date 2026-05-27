@@ -10,41 +10,7 @@
 
 
 
-'''
-def card_insert():
-    global ATM_state
-    card_pin=input("Please enter the pin ")
-    if card_pin==card_pincode:
-        print("Corret Pin")   
-    else:
-        print("Incorrect pin")
-        ATM_state="ERROR"
-    return ATM_state    
-def trasaction():
-    global ATM_state
-    user_trasac=input("Withdraw or Balace with sufficent amount , press yes or no") 
-    if user_trasac=="YES":
-        print("Valid")
-        ATM_state="WITHDRAW/BALANCE"
-    else:
-        print("Invalid")
-        ATM_state="IDLE"   
-    return ATM_state
-           
-x=card_insert()
-  
-if x=="ERROR":
-    x="IDLE"
-    print(f"The ATM state is {x}")
-y=trasaction() 
-if y=="WITHDRAW/BALANCE":
-    print(f"The ATM state is {y}")
-    y="IDLE"
-    print(f"The ATM state is {y}")    
-else:
-    
-    print(f"The ATM state is {y}")     
-    '''
+
     
 ATM_state="IDLE"
 card_pincode="123"  
