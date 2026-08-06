@@ -76,7 +76,7 @@ elif x=="Y":
     
     
     
-
+'''
  
 class local(): # Create a class called local()
     
@@ -86,11 +86,14 @@ class local(): # Create a class called local()
 z=local()# Create a object called z
  
 print(z.x)# print that object   
-
-    
+'''  
   
-     
-    
+x="idle"    
+while True:
+    user_input=input("Please enter the pin code")
+    if user_input=="YES":
+        x="busy" 
+        print(x)    
    
     
             
