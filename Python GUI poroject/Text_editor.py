@@ -9,13 +9,19 @@ window.columnconfigure(1,weight=1,minsize=800)
 
 def file_open(event):
     open_file=filedialog.askopenfilename(title=None)
+    with open (open_file, "r") as f:
+        file_read=f.read()
+        Text_edit.insert("1.0",file_read)
 
     
 
 def file_save(event):
     save_file=filedialog.asksaveasfilename(title=None)
- 
-    
+    file_edit=Text_edit.get("1.0", tk.END)
+    with open (save_file, "w") as f:
+        f.write(file_edit)
+
+
 
 
 
